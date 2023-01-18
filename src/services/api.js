@@ -1,10 +1,12 @@
 import axios from "axios";
-const URL = "http://localhost:5000/api/v1/student";
+const URL = "https://jivan-aryal.adaptable.app/api/v1/student";
 
 export const addStudent = async (data) => {
   try {
     return await axios.post(URL, data);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getAllStudent = async () => {
@@ -33,6 +35,8 @@ export const deleteStudent = async (id) => {
 
 export const editStudent = async (user, id) => {
   try {
-    return await axios.post(`${URL}/${id}`, user);
-  } catch (error) {}
+    return await axios.patch(`${URL}/${id}`, user);
+  } catch (error) {
+    console.log(error);
+  }
 };
