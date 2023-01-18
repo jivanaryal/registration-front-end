@@ -33,7 +33,7 @@ const SingleUser = () => {
             key={user._id}
             className="flex border-2 shadow-xl mt-10 pr-14 pl-6 py-6 flex-col gap-3 text-2xl mb-14">
             <div>
-              ID:<span className="pl-4">{user._id}</span>
+              ID:<span className="pl-4">{i + 1}</span>
             </div>
             <div>
               Name:<span className="pl-4">{user.name}</span>
