@@ -18,7 +18,7 @@ const OurStudent = () => {
 
   useEffect(() => {
     getAllUsers();
-  });
+  }, []);
 
   const getAllUsers = async () => {
     let res = await getAllStudent(student);

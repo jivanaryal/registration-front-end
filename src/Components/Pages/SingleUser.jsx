@@ -8,14 +8,14 @@ const SingleUser = () => {
   const [singlestd, setsingleStd] = useState([]);
   const { id } = useParams();
 
-  useEffect(() => {
-    loadStudentDetails();
-  });
-
   const loadStudentDetails = async () => {
     const response = await getStudent(id);
     setsingleStd([response.data]);
   };
+
+  useEffect(() => {
+    loadStudentDetails();
+  }, []);
   const removeUser = async (id) => {
     deleteStudent(id);
   };
