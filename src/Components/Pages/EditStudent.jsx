@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { addStudent, editStudent, getStudent } from "../../services/api";
+import { editStudent, getStudent } from "../../services/api";
 import { Link, useParams } from "react-router-dom";
 
 const defaultStudent = {
@@ -19,7 +19,7 @@ const RegistrationPage = () => {
 
   useEffect(() => {
     loadStudentDetails();
-  }, []);
+  });
 
   const loadStudentDetails = async () => {
     const response = await getStudent(id);

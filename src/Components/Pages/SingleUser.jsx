@@ -10,7 +10,7 @@ const SingleUser = () => {
 
   useEffect(() => {
     loadStudentDetails();
-  }, []);
+  });
 
   const loadStudentDetails = async () => {
     const response = await getStudent(id);

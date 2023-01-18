@@ -18,7 +18,7 @@ const OurStudent = () => {
 
   useEffect(() => {
     getAllUsers();
-  }, []);
+  });
 
   const getAllUsers = async () => {
     let res = await getAllStudent(student);
@@ -26,6 +26,7 @@ const OurStudent = () => {
   };
 
   const filteredItems = useMemo(() => {
+    // eslint-disable-next-line array-callback-return
     return student.filter((item) => {
       if (item) {
         return item.name.toString().toLowerCase().includes(query.toLowerCase());
