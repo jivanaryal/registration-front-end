@@ -25,7 +25,7 @@ const SingleUser = () => {
       <div>
         <h1 className="font-bold text-5xl">Single Student Details </h1>
       </div>
-      {singlestd.map((user, i) => {
+      {singlestd.map((user) => {
         console.log(user);
 
         return (
@@ -33,7 +33,7 @@ const SingleUser = () => {
             key={user._id}
             className="flex border-2 shadow-xl mt-10 pr-14 pl-6 py-6 flex-col gap-3 text-2xl mb-14">
             <div>
-              ID:<span className="pl-4">{i + 1}</span>
+              ID:<span className="pl-4">{user._id}</span>
             </div>
             <div>
               Name:<span className="pl-4">{user.name}</span>
