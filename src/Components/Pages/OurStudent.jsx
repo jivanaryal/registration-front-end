@@ -18,8 +18,10 @@ const OurStudent = () => {
 
   useEffect(() => {
     getAllUsers();
-  }, []);
+    // eslint-disable-next-line no-use-before-define
+  }, [getAllUsers]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getAllUsers = async () => {
     let res = await getAllStudent(student);
     setStudent(res.data);

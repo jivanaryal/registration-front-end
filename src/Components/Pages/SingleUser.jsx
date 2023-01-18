@@ -8,6 +8,7 @@ const SingleUser = () => {
   const [singlestd, setsingleStd] = useState([]);
   const { id } = useParams();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const loadStudentDetails = async () => {
     const response = await getStudent(id);
     setsingleStd([response.data]);
@@ -15,7 +16,7 @@ const SingleUser = () => {
 
   useEffect(() => {
     loadStudentDetails();
-  }, []);
+  }, [loadStudentDetails]);
   const removeUser = async (id) => {
     deleteStudent(id);
   };

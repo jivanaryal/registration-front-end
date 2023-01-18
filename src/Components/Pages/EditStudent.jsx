@@ -19,8 +19,10 @@ const RegistrationPage = () => {
 
   useEffect(() => {
     loadStudentDetails();
-  }, []);
+    // eslint-disable-next-line no-use-before-define
+  }, [loadStudentDetails]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const loadStudentDetails = async () => {
     const response = await getStudent(id);
     setStudent(response.data);
