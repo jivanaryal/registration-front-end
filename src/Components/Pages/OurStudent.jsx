@@ -65,7 +65,7 @@ const OurStudent = () => {
                 <TableCell>{val.address}</TableCell>
                 <TableCell>{val.contact}</TableCell>{" "}
                 <TableCell
-                  className="more"
+                  className="more cursor-pointer"
                   onClick={() => alert("This option only for admin")}>
                   More...
                 </TableCell>
