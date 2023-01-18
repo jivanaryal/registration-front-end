@@ -6,9 +6,16 @@ import RegistrationPage from "./Components/Pages/RegistrationPage";
 import OurStudent from "./Components/Pages/OurStudent";
 import SingleUser from "./Components/Pages/SingleUser";
 import EditStudent from "./Components/Pages/EditStudent";
+import { Helmet } from "react-helmet";
 const App = () => {
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>registration-system</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+        <meta name="description" content="Testing icons and title" />
+      </Helmet>
       <Router>
         <Layout>
           <Routes>
