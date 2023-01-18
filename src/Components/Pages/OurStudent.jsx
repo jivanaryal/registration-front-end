@@ -9,7 +9,6 @@ import {
 import { useState } from "react";
 import { useEffect } from "react";
 import { getAllStudent } from "../../services/api";
-import { Link } from "react-router-dom";
 import { useMemo } from "react";
 
 const OurStudent = () => {
@@ -64,11 +63,12 @@ const OurStudent = () => {
                 <TableCell>{i}</TableCell>
                 <TableCell>{val.name}</TableCell>
                 <TableCell>{val.address}</TableCell>
-                <TableCell>{val.contact}</TableCell>
-                <Link to={`/single/${val._id}`}>
-                  {" "}
-                  <TableCell className="more">More...</TableCell>
-                </Link>
+                <TableCell>{val.contact}</TableCell>{" "}
+                <TableCell
+                  className="more"
+                  onClick={() => alert("This option only for admin")}>
+                  More...
+                </TableCell>
               </TableRow>
             );
           })}

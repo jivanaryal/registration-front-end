@@ -3,7 +3,7 @@ const URL = "https://jivan-aryal.adaptable.app/api/v1/student";
 
 export const addStudent = async (data) => {
   try {
-    return await axios.post(URL, data);
+    // return await axios.post(URL, data);
   } catch (error) {
     console.log(error);
   }
