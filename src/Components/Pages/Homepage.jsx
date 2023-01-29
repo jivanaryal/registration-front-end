@@ -8,7 +8,7 @@ const URL =
 
 const Homepage = () => {
   const navigate = useNavigate();
-  const [cookie, removeCookie] = useCookies([]);
+  const [cookie, setCookie, removeCookie] = useCookies([]);
   useEffect(() => {
     const verifyUser = async () => {
       if (!cookie.jwt) {
@@ -19,6 +19,7 @@ const Homepage = () => {
           removeCookie("jwt");
           navigate("/login", { replace: true });
         } else {
+          setCookie("jwt");
           toast(`Hi ${data.user}`, { theme: "dark" });
         }
       }
