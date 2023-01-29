@@ -1,5 +1,6 @@
 import axios from "axios";
-const URL = "https://jivan-aryal.adaptable.app/api/v1/student";
+const URL =
+  "https://registration-backend-production.up.railway.app/api/v1/student";
 
 export const addStudent = async (data) => {
   try {
