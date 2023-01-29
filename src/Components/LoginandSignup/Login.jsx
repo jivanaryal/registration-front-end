@@ -28,7 +28,7 @@ const LoginPage = () => {
           withCredentials: true,
         }
       );
-      console.log(data.errors);
+
       console.log({ data });
       if (data) {
         if (data.errors) {
