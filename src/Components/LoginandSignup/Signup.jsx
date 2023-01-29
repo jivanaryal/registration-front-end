@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 const URL =
-  "https://registration-backend-production.up.railway.app/api/v1/user/signup";
+  "https://registration-backend-production.up.railway.app/api/v1/user/register";
 
 const Signup = () => {
   const [values, setValues] = useState({ email: "", password: "" });

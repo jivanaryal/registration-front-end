@@ -1,38 +1,13 @@
-import React, { useEffect } from "react";
-import { useCookies } from "react-cookie";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-const URL =
-  "https://registration-backend-production.up.railway.app/api/v1/user";
 
 const Homepage = () => {
   const navigate = useNavigate();
-  const [cookie, removeCookie] = useCookies([]);
-  useEffect(() => {
-    const verifyUser = async () => {
-      if (!cookie.jwt) {
-        return navigate("/login");
-      } else {
-        const { data } = await axios.post(URL, {}, { withCredentials: true });
-        if (!data.status) {
-          removeCookie("jwt");
-          navigate("/login", { replace: true });
-        } else {
-          toast(`Hi ${data.user}`, { theme: "dark" });
-        }
-      }
-    };
-    verifyUser();
-  }, [cookie, navigate, removeCookie]);
-
   const logOut = () => {
-    removeCookie("jwt");
     navigate("/login");
   };
   return (
     <div>
-      <ToastContainer />
       <div className="flex flex-col w-screen h-[67vh] justify-center items-center ">
         <div className="text-5xl font-bold text-lime-600">
           Welcome to Our Registration page
