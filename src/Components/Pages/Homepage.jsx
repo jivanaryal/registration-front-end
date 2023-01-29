@@ -8,7 +8,7 @@ const URL =
 
 const Homepage = () => {
   const navigate = useNavigate();
-  const [cookie, setCookie, removeCookie] = useCookies([]);
+  const [cookie, setCookie, removeCookie] = useCookies(["jwt"]);
   useEffect(() => {
     const verifyUser = async () => {
       if (!cookie.jwt) {
@@ -19,13 +19,13 @@ const Homepage = () => {
           removeCookie("jwt");
           navigate("/login", { replace: true });
         } else {
-          setCookie("jwt");
+          setCookie("jwt", "manoj", { path: "/" });
           toast(`Hi ${data.user}`, { theme: "dark" });
         }
       }
     };
     verifyUser();
-  }, [cookie, navigate, removeCookie]);
+  }, [cookie, navigate, setCookie, removeCookie]);
 
   const logOut = () => {
     removeCookie("jwt");
