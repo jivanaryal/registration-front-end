@@ -3,7 +3,8 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-const URL = "http://localhost:5000/api/v1/user/";
+const URL =
+  "https://registration-backend-production.up.railway.app/api/v1/user/";
 
 const Homepage = () => {
   const navigate = useNavigate();
